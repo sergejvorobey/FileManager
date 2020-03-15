@@ -18,7 +18,7 @@ class EditViewController: UIViewController {
     @IBOutlet weak var saveButtonLabel: UIButton!
     
     var humanCurrent: UserDataPlist?
-    
+     var arrayJson = [Decodable]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,45 +30,27 @@ class EditViewController: UIViewController {
                    ageTextField.text = humanCurrent.age
         }
     }
-    var userData = [UserDataPlist]()
-    
-    func plistWrite(plistName: String, key: String, data: AnyObject?) {
-        
-                  let path = Bundle.main.path(forResource: "DataList", ofType: "plist")
-
-                   let fileManager = FileManager.default
-        
-                   if !(fileManager.fileExists(atPath: path!)) {
-                    
-                       if let bundlePath = Bundle.main.path(forResource: plistName, ofType: "plist") {
-                        
-                          do {
-                           try fileManager.copyItem(atPath: bundlePath, toPath: path!)
-                            
-                          } catch let error as NSError {
-                              print("Can't move plist from bundle to documents directory: " + error.localizedDescription)
-                          }
-                      
-                      }
-                  }
-
-                   if let savedStock = NSMutableDictionary(contentsOfFile: path!) {
-//                    print(savedStock)
-                       
-                    savedStock.setObject(data!, forKey: key as NSCopying)
-                    savedStock.write(toFile: path!, atomically: true)
-                   print(savedStock)
-                    
-                }
-            }
-        
-        
-    
+      
     @IBAction func saveButton(_ sender: UIButton) {
-        
-//        let path = Bundle.main.path(forResource: "DataList", ofType: "plist")
-//        let dict = NSDictionary(contentsOfFile: path!)
-        plistWrite(plistName: "DataList", key: "Users", data: "User 3" as? AnyObject)
-           
+      
+        let key = "Users"
+        let value = ["User 3": ["firstName": firstNameTextField.text,
+                                    "lastName": lastNameTextField.text,
+                                    "age": ageTextField.text]
+        ]
+        let path = Bundle.main.path(forResource: "DataList", ofType: "plist")
+        let url = URL(fileURLWithPath: path!)
+        let dict = NSMutableDictionary()/* = [firstNameTextField.text:
+                                                        ["firstName": firstNameTextField.text,
+                                                        "lastName": lastNameTextField.text,
+                                                        "age": ageTextField.text]]*/
+        dict.setValue(value, forKey: key)
+        dict.write(to: url, atomically: false)
+//        print(dict)
+
+
+        let resultDictionary = NSMutableDictionary(contentsOfFile: path!)
+        print(resultDictionary as Any)
     }
 }
+

@@ -22,7 +22,7 @@ class DataLoader {
         let dict = NSDictionary(contentsOfFile: path!)
 
             for (_, value) in (dict!["Users"] as? [String: Any])! {
-              //  print(key, value)
+//                print(key,value)
                 
                 var oneUser: UserDataPlist = UserDataPlist()
                 for (localKey, localValue) in ((value as? [String: Any])!) {
@@ -45,6 +45,6 @@ class DataLoader {
     }
     
     func sort() {
-        self.userData = self.userData.sorted(by: { $0.userId! < $1.userId! })
+        self.userData = self.userData.sorted(by: { $0.age! < $1.age! })
         }
 }

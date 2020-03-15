@@ -19,6 +19,8 @@
 		87F7FA3C2419421C001C0B42 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F7FA3B2419421C001C0B42 /* DataLoader.swift */; };
 		87F7FA42241971EF001C0B42 /* DataList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87F7FA41241971EF001C0B42 /* DataList.plist */; };
 		87F7FA48241AF85B001C0B42 /* EditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F7FA47241AF85B001C0B42 /* EditViewController.swift */; };
+		87F7FA4A241D14BF001C0B42 /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87F7FA49241D14BF001C0B42 /* Data.plist */; };
+		87F7FA4C241D6E5B001C0B42 /* JSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 87F7FA4B241D6E5B001C0B42 /* JSON.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		87F7FA3B2419421C001C0B42 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
 		87F7FA41241971EF001C0B42 /* DataList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = DataList.plist; sourceTree = "<group>"; };
 		87F7FA47241AF85B001C0B42 /* EditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewController.swift; sourceTree = "<group>"; };
+		87F7FA49241D14BF001C0B42 /* Data.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
+		87F7FA4B241D6E5B001C0B42 /* JSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JSON.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +100,9 @@
 				87F7FA3424192BEF001C0B42 /* File.swift */,
 				87F7FA3B2419421C001C0B42 /* DataLoader.swift */,
 				87F7FA3924193555001C0B42 /* DataJson.json */,
+				87F7FA4B241D6E5B001C0B42 /* JSON.json */,
 				87F7FA41241971EF001C0B42 /* DataList.plist */,
+				87F7FA49241D14BF001C0B42 /* Data.plist */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,11 +165,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87F7FA4A241D14BF001C0B42 /* Data.plist in Resources */,
 				87F7FA42241971EF001C0B42 /* DataList.plist in Resources */,
 				87F7FA3A24193555001C0B42 /* DataJson.json in Resources */,
 				87F7FA2524191DC5001C0B42 /* LaunchScreen.storyboard in Resources */,
 				87F7FA2224191DC5001C0B42 /* Assets.xcassets in Resources */,
 				87F7FA2024191DC4001C0B42 /* Main.storyboard in Resources */,
+				87F7FA4C241D6E5B001C0B42 /* JSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
